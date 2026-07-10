@@ -11,13 +11,11 @@
 
 <link rel="stylesheet" href="style.css">
 
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
-
 
 </head>
 
@@ -28,67 +26,53 @@
 <div class="background"></div>
 
 
-
-<!-- دکمه سه خط -->
+<!-- دکمه منوی سه خط -->
 
 <div class="menu-button" onclick="openMenu()">
-
 ☰
-
 </div>
 
 
 
-<!-- منوی کناری -->
+<!-- پنل منو -->
 
-<div class="mobile-menu" id="mobileMenu">
+<div class="menu-panel" id="menuPanel">
 
 
-<div class="menu-profile">
+<div class="menu-top">
 
 <img src="profile.jpg">
 
-
 <h2>PWEG</h2>
 
-
-<p>
-Play With Elia Gamer
-</p>
-
 </div>
 
 
-
-<a onclick="moveTo('home')">
-
+<a href="index.html">
 🏠 صفحه اصلی سایت
-
 </a>
 
 
-<a onclick="moveTo('games')">
-
+<a href="games.html">
 🎮 دانلود بازی‌ها
-
 </a>
 
 
-<a onclick="moveTo('ai')">
-
+<a href="ai.html">
 🤖 هوش مصنوعی
-
 </a>
 
 
-<a onclick="moveTo('about')">
-
+<a href="about.html">
 ℹ️ درباره ما
-
 </a>
 
 
 </div>
+
+
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 
 
@@ -96,23 +80,20 @@ Play With Elia Gamer
 
 <!-- صفحه اصلی -->
 
-<header id="home">
+
+<header>
 
 
 <img src="profile.jpg" class="profile">
 
 
 <h1>
-
 PWEG
-
 </h1>
 
 
 <p class="subtitle">
-
 Play With Elia Gamer
-
 </p>
 
 
@@ -126,28 +107,21 @@ Play With Elia Gamer
 
 
 <h2>
-
-به دنیای بازی‌های شگفت انگیز PWEG خوش آمدید
-
+به دنیای بازی‌های شگفت‌انگیز PWEG خوش آمدید
 </h2>
 
 
 <p>
-
 
 PWEG (Play With Elia Gamer)
 
 <br><br>
 
-
-در این کانال و سایت، ویدیوهای گیمینگ، لحظات هیجان‌انگیز، چالش‌ها، آموزش‌ها، هوش مصنوعی و محتوای سرگرم‌کننده را با شما به اشتراک می‌گذاریم.
-
+در این کانال و سایت، ویدیوهای گیمینگ، لحظات هیجان‌انگیز، چالش‌ها، آموزش‌ها و محتوای سرگرم‌کننده را با شما به اشتراک می‌گذاریم.
 
 <br><br>
 
-
-همراه PWEG باشید و از دنیای بازی‌ها لذت ببرید. 🎮
-
+همراه PWEG باشید و وارد دنیای بازی‌ها شوید. 🎮
 
 </p>
 
@@ -157,217 +131,28 @@ PWEG (Play With Elia Gamer)
 
 
 
-
-
-<!-- دانلود بازی -->
-
-<section id="games" class="page-section">
-
-
-<h2>
-
-🎮 دانلود بازی‌ها
-
-</h2>
-
-
-<p>
-
-
-در این بخش به‌زودی بازی‌های مختلف قرار می‌گیرند.
-
-
-<br><br>
-
-
-بازی‌ها شامل:
-<br>
-
-• معرفی بازی
-
-<br>
-
-• عکس بازی
-
-<br>
-
-• توضیحات کامل
-
-<br>
-
-• لینک دانلود
-
-
-</p>
-
-
-
-<div id="gameList">
-
-
-<p>
-
-هنوز بازی‌ای اضافه نشده است.
-
-</p>
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-<!-- هوش مصنوعی -->
-
-<section id="ai" class="page-section">
-
-
-<h2>
-
-🤖 هوش مصنوعی PWEG
-
-</h2>
-
-
-
-<p>
-
-
-هوش مصنوعی اختصاصی PWEG در حال توسعه است.
-
-
-<br><br>
-
-
-به‌زودی کاربران می‌توانند وارد بخش هوش مصنوعی شوند، پیام خود را ارسال کنند و پاسخ دریافت کنند.
-
-
-<br><br>
-
-
-این بخش پس از آماده شدن فعال خواهد شد.
-
-
-</p>
-
-
-
-<button>
-
-شروع هوش مصنوعی (به‌زودی)
-
-</button>
-
-
-
-</section>
-
-
-
-
-
-
-
-<!-- درباره ما -->
-
-<section id="about" class="page-section">
-
-
-<h2>
-
-ℹ️ درباره ما
-
-</h2>
-
-
-
-<h3>
-
-در این کانال چه شگفتی‌هایی خواهید دید؟
-
-</h3>
-
-
-
-<p>
-
-
-PWEG (Play With Elia Gamer)
-
-
-<br><br>
-
-
-در این کانال ویدیوهای گیمینگ، لحظات هیجان‌انگیز، چالش‌ها و محتوای سرگرم‌کننده را با شما به اشتراک می‌گذاریم.
-
-
-<br><br>
-
-
-اگر از محتوای ما لذت می‌برید، کانال را دنبال کنید و حمایت مالی فراموش نشه.
-
-
-<br><br>
-
-
-همراه PWEG باشید. 🎮
-
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-
-<!-- شبکه ها -->
 
 <div class="buttons">
 
 
 <a href="https://aparat.com/PWEG" target="_blank">
-
 کانال آپارات PWEG
-
 </a>
-
 
 
 <a href="https://rubika.ir/PWEG123" target="_blank">
-
 کانال روبیکا PWEG
-
 </a>
-
-
 
 
 <a href="https://splus.ir/PWEG123" target="_blank">
-
 کانال سروش پلاس PWEG
-
 </a>
-
-
 
 
 <a href="https://daramet.com/PWEG" target="_blank">
-
 حمایت مالی از PWEG ❤️
-
 </a>
-
 
 
 </div>
