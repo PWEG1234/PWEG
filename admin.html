@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PWEG Admin</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-container">
+
+
+<div class="login-box" id="login">
+
+
+<h1>🎮 PWEG Admin</h1>
+
+
+<input id="password" type="password" placeholder="رمز ادمین">
+
+
+<button onclick="login()">
+ورود
+</button>
+
+
+<p id="error"></p>
+
+
+</div>
+
+
+
+
+
+<div class="dashboard" id="dashboard">
+
+
+<h1>
+پنل مدیریت PWEG
+</h1>
+
+
+<div class="card">
+
+
+<h2>
+اضافه کردن بازی
+</h2>
+
+
+
+<input id="gameTitle"
+placeholder="نام بازی">
+
+
+
+<textarea id="gameDesc"
+placeholder="توضیحات بازی"></textarea>
+
+
+
+
+<input id="downloadLink"
+placeholder="لینک دانلود">
+
+
+
+
+
+<label>
+آپلود عکس بازی
+</label>
+
+
+<input 
+type="file"
+id="imageFile"
+accept="image/*">
+
+
+
+<p>
+یا لینک عکس:
+</p>
+
+
+<input id="imageLink"
+placeholder="لینک عکس">
+
+
+
+<img id="preview">
+
+
+
+
+
+<button onclick="saveGame()">
+
+ذخیره بازی
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+بازی های ثبت شده
+</h2>
+
+
+<div id="games"></div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+<script src="admin.js"></script>
+
+
+</body>
+
+</html>
