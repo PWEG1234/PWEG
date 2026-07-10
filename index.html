@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>PWEG</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 </head>
@@ -17,19 +20,65 @@
 
 <div class="background"></div>
 
+<!-- منوی سه خط -->
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
+
+<!-- منوی کناری -->
+<div class="side-menu" id="sideMenu">
+
+<div class="menu-header">
+
+<h2>PWEG</h2>
+
+<span onclick="toggleMenu()">✕</span>
+
+</div>
+
+<a href="index.html">🏠 صفحه اصلی</a>
+
+<a href="games.html">🎮 دانلود بازی‌ها</a>
+
+<a href="ai.html">🤖 هوش مصنوعی</a>
+
+<a href="about.html">ℹ️ درباره ما</a>
+
+</div>
+
+<div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+
 <header>
-  
+
+<img src="profile.jpg" class="profile" alt="PWEG">
+
+<h1>PWEG</h1>
+
+<p class="subtitle">
+Play With Elia Gamer
+</p>
+
+</header>
+
 <section class="about">
 
-<h2>به دنیای بازی های شگفت انگیز PWEG خوش آمدید.</h2>
+<h2>
+به دنیای بازی‌های شگفت‌انگیز PWEG خوش آمدید
+</h2>
 
 <p>
 
 PWEG (Play With Elia Gamer)
 
-  
+<br><br>
+
 در این کانال ویدیوهای گیمینگ، لحظات هیجان‌انگیز، چالش‌ها و محتوای سرگرم‌کننده را با شما به اشتراک می‌گذاریم.
-اگر از محتوای ما لذت می‌برید، کانال را دنبال کنید و حمایت مالی فراموش نشه ، همراه PWEG باشید. 🎮
+
+<br><br>
+
+اگر از محتوای ما لذت می‌برید، کانال را دنبال کنید و حمایت مالی فراموش نشود.
+
+همراه PWEG باشید. 🎮
 
 </p>
 
@@ -38,7 +87,7 @@ PWEG (Play With Elia Gamer)
 <div class="buttons">
 
 <a href="https://aparat.com/PWEG" target="_blank">
-  کانال آپارات PWEG
+کانال آپارات PWEG
 </a>
 
 <a href="https://rubika.ir/PWEG123" target="_blank">
@@ -55,8 +104,7 @@ PWEG (Play With Elia Gamer)
 
 </div>
 
-  <div id="gameList"></div>
+<script src="script.js"></script>
 
-  
 </body>
 </html>
