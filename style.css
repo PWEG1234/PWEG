@@ -1,658 +1,293 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-
-html{
-    scroll-behavior:smooth;
+box-sizing:border-box;
+font-family:Vazirmatn;
 }
 
 
 body{
 
-    font-family:"Vazirmatn",sans-serif;
+margin:0;
 
-    min-height:100vh;
+background:#050510;
 
-    background:#050510;
-
-    color:white;
-
-    overflow-x:hidden;
+color:white;
 
 }
-
-
 
 
 
 .background{
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+width:100%;
 
-    z-index:-5;
+height:100%;
 
-    background:
+background:
+radial-gradient(circle at top,#004cff55,transparent),
+radial-gradient(circle at bottom,#00ffff33,transparent);
 
-    radial-gradient(circle at 20% 20%,#00ffff55,transparent 30%),
-
-    radial-gradient(circle at 80% 80%,#ff00ff55,transparent 30%),
-
-    linear-gradient(120deg,#050510,#090020);
-
-
-    animation:backgroundMove 12s infinite alternate;
+z-index:-1;
 
 }
 
 
 
-@keyframes backgroundMove{
+.hamburger{
 
+position:fixed;
 
-    from{
+top:20px;
 
-        filter:hue-rotate(0deg);
+right:20px;
 
-        transform:scale(1);
+font-size:35px;
 
-    }
+cursor:pointer;
 
+background:#111827;
 
-    to{
+padding:8px 15px;
 
-        filter:hue-rotate(80deg);
+border-radius:15px;
 
-        transform:scale(1.1);
+box-shadow:0 0 20px cyan;
 
-    }
+z-index:10;
 
 }
 
 
+
+.side-menu{
+
+position:fixed;
+
+top:0;
+
+right:-400px;
+
+width:350px;
+
+height:100%;
+
+background:#050505ee;
+
+backdrop-filter:blur(20px);
+
+transition:.4s;
+
+z-index:20;
+
+padding:30px;
+
+box-shadow:-10px 0 40px black;
+
+}
+
+
+
+.side-menu.active{
+
+right:0;
+
+}
+
+
+
+.close{
+
+font-size:40px;
+
+cursor:pointer;
+
+}
+
+
+
+.menu-img{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:3px solid cyan;
+
+margin-top:20px;
+
+}
+
+
+
+.side-menu h2{
+
+color:#00ffff;
+
+}
+
+
+
+.side-menu a{
+
+display:block;
+
+color:white;
+
+text-decoration:none;
+
+padding:20px 10px;
+
+font-size:20px;
+
+border-bottom:1px solid #333;
+
+transition:.3s;
+
+}
+
+
+
+.side-menu a:hover{
+
+color:#00ffff;
+
+padding-right:25px;
+
+}
+
+
+
+.overlay{
+
+display:none;
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+background:#0008;
+
+z-index:15;
+
+}
+
+
+
+.overlay.active{
+
+display:block;
+
+}
 
 
 
 header{
 
-    text-align:center;
+text-align:center;
 
-    padding-top:70px;
+padding-top:70px;
 
 }
-
-
 
 
 
 .profile{
 
-    width:230px;
+width:160px;
 
-    height:230px;
+height:160px;
 
-    object-fit:cover;
+border-radius:50%;
 
-    border-radius:50%;
+border:5px solid cyan;
 
-
-    border:8px solid transparent;
-
-
-    background:
-
-    linear-gradient(#050510,#050510) padding-box,
-
-    linear-gradient(45deg,
-
-    cyan,
-
-    purple,
-
-    red,
-
-    cyan) border-box;
-
-
-    animation:rgb 5s linear infinite;
-
-
-    box-shadow:
-
-    0 0 30px cyan,
-
-    0 0 80px #00ffff88;
+box-shadow:0 0 30px cyan;
 
 }
-
-
-
-
-
-@keyframes rgb{
-
-    100%{
-
-        filter:hue-rotate(360deg);
-
-    }
-
-}
-
-
 
 
 
 h1{
 
-    font-size:80px;
+font-size:55px;
 
-    margin-top:30px;
-
-
-    color:#00ffff;
-
-
-    text-shadow:
-
-    0 0 10px cyan,
-
-    0 0 40px cyan;
-
+color:#00ffff;
 
 }
-
-
 
 
 
 .subtitle{
 
-    font-size:25px;
-
-    color:#ddd;
+font-size:22px;
 
 }
-
-
 
 
 
 .about{
 
-    width:85%;
+width:85%;
 
-    max-width:900px;
+margin:50px auto;
 
+padding:35px;
 
-    margin:80px auto;
+background:#ffffff12;
 
+border-radius:25px;
 
-    padding:40px;
+backdrop-filter:blur(15px);
 
-
-    border-radius:35px;
-
-
-    background:
-
-    rgba(255,255,255,.08);
-
-
-    border:1px solid rgba(255,255,255,.2);
-
-
-    backdrop-filter:blur(20px);
-
-
-    box-shadow:
-
-    0 0 40px #000;
-
-
-    text-align:center;
-
+line-height:2;
 
 }
-
-
-
-
-
-.about h2{
-
-    font-size:35px;
-
-    margin-bottom:25px;
-
-
-}
-
-
-
-
-.about p{
-
-    font-size:20px;
-
-    line-height:2;
-
-    color:#ddd;
-
-
-}
-
-
-
 
 
 
 .buttons{
 
+display:flex;
 
-    display:flex;
+flex-wrap:wrap;
 
+justify-content:center;
 
-    justify-content:center;
-
-
-    flex-wrap:wrap;
-
-
-    gap:25px;
-
-
-    padding-bottom:70px;
-
+gap:20px;
 
 }
-
 
 
 
 .buttons a{
 
+background:#00ffff;
 
-    text-decoration:none;
+color:black;
 
+padding:15px 25px;
 
-    color:white;
+border-radius:20px;
 
+text-decoration:none;
 
-    font-size:20px;
-
-
-    padding:18px 45px;
-
-
-    border-radius:50px;
-
-
-    background:
-
-    linear-gradient(
-
-    45deg,
-
-    #00ffff33,
-
-    #ff00ff33);
-
-
-    border:1px solid cyan;
-
-
-    backdrop-filter:blur(15px);
-
-
-    transition:.4s;
-
-
-    box-shadow:
-
-    0 0 20px #00ffff55;
-
+font-weight:bold;
 
 }
 
 
 
+@media(max-width:600px){
 
+.side-menu{
 
-.buttons a:hover{
-
-
-    transform:
-
-    translateY(-12px)
-
-    scale(1.08);
-
-
-    background:#00ffff;
-
-
-    color:black;
-
-
-    box-shadow:
-
-    0 0 50px cyan;
-
+width:85%;
 
 }
-
-
-
-
-
-
-
-.particle{
-
-
-    position:fixed;
-
-    width:5px;
-
-    height:5px;
-
-
-    background:white;
-
-
-    border-radius:50%;
-
-
-    opacity:.5;
-
-
-    animation:particleMove 12s infinite linear;
-
-
-}
-
-
-
-
-
-@keyframes particleMove{
-
-
-    from{
-
-        transform:translateY(100vh);
-
-    }
-
-
-    to{
-
-        transform:translateY(-100vh);
-
-    }
-
-
-}
-
-
-
-
-
-@media(max-width:700px){
-
-
-    h1{
-
-        font-size:50px;
-
-    }
-
-
-
-    .profile{
-
-        width:170px;
-
-        height:170px;
-
-    }
-
-
-
-    .about{
-
-        width:90%;
-
-        padding:25px;
-
-    }
-
-
-
-    .buttons a{
-
-        width:80%;
-
-        text-align:center;
-
-    }
-
-}
-
-/* ===========================
-   منوی سه خطی
-=========================== */
-
-.hamburger{
-    position:fixed;
-    top:20px;
-    right:20px;
-    width:55px;
-    height:55px;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.2);
-    backdrop-filter:blur(15px);
-    border-radius:15px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:30px;
-    cursor:pointer;
-    color:#00ffff;
-    box-shadow:0 0 20px rgba(0,255,255,.4);
-    transition:.3s;
-    z-index:1000;
-}
-
-.hamburger:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 30px cyan;
-}
-
-/* ===========================
-   منوی کناری
-=========================== */
-
-.menu{
-    position:fixed;
-    top:0;
-    right:-320px;
-    width:300px;
-    height:100vh;
-    background:rgba(10,10,25,.92);
-    backdrop-filter:blur(20px);
-    border-left:2px solid cyan;
-    transition:.4s;
-    z-index:999;
-    padding-top:90px;
-}
-
-.menu.active{
-    right:0;
-}
-
-.menu a{
-    display:block;
-    text-decoration:none;
-    color:white;
-    padding:18px 30px;
-    font-size:20px;
-    transition:.3s;
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.menu a:hover{
-    background:rgba(0,255,255,.15);
-    color:cyan;
-    padding-right:40px;
-}
-
-/* ===========================
-   بخش های سایت
-=========================== */
-
-.page-section{
-    width:90%;
-    max-width:1100px;
-    margin:70px auto;
-    padding:40px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.15);
-    backdrop-filter:blur(20px);
-    border-radius:30px;
-    box-shadow:0 0 25px rgba(0,0,0,.4);
-}
-
-.page-section h2{
-    color:cyan;
-    font-size:34px;
-    margin-bottom:20px;
-}
-
-.page-section p{
-    color:#ddd;
-    line-height:2;
-    font-size:18px;
-}
-
-/* ===========================
-   دانلود بازی ها
-=========================== */
-
-#gameList{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-    margin-top:30px;
-}
-
-.game-box{
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:25px;
-    overflow:hidden;
-    transition:.3s;
-    backdrop-filter:blur(15px);
-}
-
-.game-box:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 25px cyan;
-}
-
-.game-box img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
-
-.game-box h3{
-    padding:15px;
-    color:cyan;
-}
-
-.game-box p{
-    padding:0 15px 20px;
-}
-
-.game-box a{
-    display:block;
-    text-align:center;
-    margin:20px;
-    padding:12px;
-    border-radius:15px;
-    text-decoration:none;
-    background:linear-gradient(45deg,#00ffff,#0099ff);
-    color:black;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.game-box a:hover{
-    transform:scale(1.05);
-}
-
-/* ===========================
-   بخش هوش مصنوعی
-=========================== */
-
-.ai-box{
-    margin-top:25px;
-}
-
-.ai-box input{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:15px;
-    margin-top:15px;
-    background:#ffffff15;
-    color:white;
-}
-
-.ai-box button{
-    margin-top:15px;
-    padding:15px 30px;
-    border:none;
-    border-radius:15px;
-    cursor:pointer;
-    background:linear-gradient(45deg,#00ffff,#008cff);
-    color:black;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.ai-box button:hover{
-    transform:scale(1.05);
-}
-
-/* ===========================
-   موبایل
-=========================== */
-
-@media(max-width:700px){
-
-    .menu{
-        width:260px;
-    }
-
-    .page-section{
-        padding:25px;
-    }
-
-    .page-section h2{
-        font-size:28px;
-    }
-
-    .hamburger{
-        width:50px;
-        height:50px;
-        font-size:28px;
-    }
 
 }
