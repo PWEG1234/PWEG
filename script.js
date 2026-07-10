@@ -163,3 +163,60 @@ button.style.transform="";
 
 
 });
+
+function showGames(){
+
+
+let list=
+JSON.parse(localStorage.getItem("PWEG_GAMES")) || [];
+
+
+let box=
+document.getElementById("gameList");
+
+
+if(!box)return;
+
+
+box.innerHTML="";
+
+
+list.forEach(game=>{
+
+
+box.innerHTML+=`
+
+<div class="game-box">
+
+
+<img src="${game.image}">
+
+
+<h3>
+${game.title}
+</h3>
+
+
+<p>
+${game.description}
+</p>
+
+
+<a href="${game.download}">
+دانلود
+</a>
+
+
+</div>
+
+
+`;
+
+
+});
+
+
+}
+
+
+showGames();
