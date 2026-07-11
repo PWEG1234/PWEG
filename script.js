@@ -191,3 +191,8 @@ function closeSupportOutside(event){
     }
 
 }
+function testSupport(){
+
+alert("دکمه حمایت کار می‌کند");
+
+}
