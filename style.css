@@ -1,14 +1,17 @@
+/* ===========================
+   PWEG STYLE V2
+   بخش اول
+===========================*/
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-
 html{
     scroll-behavior:smooth;
 }
-
 
 body{
 
@@ -24,9 +27,9 @@ body{
 
 }
 
-
-
-
+/* ===========================
+      BACKGROUND
+===========================*/
 
 .background{
 
@@ -34,7 +37,7 @@ body{
 
     inset:0;
 
-    z-index:-5;
+    z-index:-10;
 
     background:
 
@@ -42,52 +45,274 @@ body{
 
     radial-gradient(circle at 80% 80%,#ff00ff55,transparent 30%),
 
-    linear-gradient(120deg,#050510,#090020);
+    radial-gradient(circle at 60% 30%,#0066ff33,transparent 35%),
 
+    linear-gradient(135deg,#04040b,#090020,#030313);
 
-    animation:backgroundMove 12s infinite alternate;
+    animation:bgMove 18s ease-in-out infinite alternate;
 
 }
 
-
-
-@keyframes backgroundMove{
-
+@keyframes bgMove{
 
     from{
 
-        filter:hue-rotate(0deg);
-
         transform:scale(1);
+
+        filter:hue-rotate(0deg);
 
     }
 
-
     to{
 
-        filter:hue-rotate(80deg);
+        transform:scale(1.08);
 
-        transform:scale(1.1);
+        filter:hue-rotate(70deg);
 
     }
 
 }
 
+/* ===========================
+      MENU BUTTON
+===========================*/
 
+.menu-btn{
 
+    position:fixed;
 
+    top:20px;
+
+    right:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:3000;
+
+    transition:.35s;
+
+    box-shadow:0 0 25px rgba(0,255,255,.35);
+
+}
+
+.menu-btn:hover{
+
+    background:#00ffff;
+
+    color:black;
+
+    transform:scale(1.08);
+
+}
+
+/* ===========================
+      OVERLAY
+===========================*/
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(5px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:2990;
+
+}
+
+.menu-overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* ===========================
+      SIDE MENU
+===========================*/
+
+.side-menu{
+
+    position:fixed;
+
+    top:0;
+
+    right:-330px;
+
+    width:320px;
+
+    height:100%;
+
+    background:rgba(7,10,20,.94);
+
+    backdrop-filter:blur(18px);
+
+    border-left:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+
+    z-index:3001;
+
+    overflow-y:auto;
+
+    box-shadow:-10px 0 40px rgba(0,255,255,.18);
+
+}
+
+.side-menu.show{
+
+    right:0;
+
+}
+
+.menu-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.menu-header h2{
+
+    color:#00ffff;
+
+    font-size:28px;
+
+}
+
+.close-menu{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ffffff10;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    transition:.3s;
+
+}
+
+.close-menu:hover{
+
+    background:#ff3b3b;
+
+}
+
+/* ===========================
+      MENU LINKS
+===========================*/
+
+.side-menu a{
+
+    display:block;
+
+    padding:18px 25px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.side-menu a:hover{
+
+    background:rgba(0,255,255,.15);
+
+    color:#00ffff;
+
+    padding-right:35px;
+
+}
+
+.soon{
+
+    color:#ffbf00;
+
+    font-size:13px;
+
+}
+/* ===========================
+      HEADER
+===========================*/
 
 header{
 
     text-align:center;
 
-    padding-top:70px;
+    padding-top:90px;
+
+    animation:fadeUp 1s ease;
 
 }
 
+@keyframes fadeUp{
 
+    from{
 
+        opacity:0;
 
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
 
 .profile{
 
@@ -99,41 +324,25 @@ header{
 
     border-radius:50%;
 
-
     border:8px solid transparent;
-
 
     background:
 
     linear-gradient(#050510,#050510) padding-box,
 
-    linear-gradient(45deg,
+    linear-gradient(45deg,#00ffff,#7b2cff,#ff0066,#00ffff) border-box;
 
-    cyan,
-
-    purple,
-
-    red,
-
-    cyan) border-box;
-
-
-    animation:rgb 5s linear infinite;
-
+    animation:rgbBorder 5s linear infinite;
 
     box-shadow:
 
     0 0 30px cyan,
 
-    0 0 80px #00ffff88;
+    0 0 80px rgba(0,255,255,.5);
 
 }
 
-
-
-
-
-@keyframes rgb{
+@keyframes rgbBorder{
 
     100%{
 
@@ -143,44 +352,37 @@ header{
 
 }
 
-
-
-
-
 h1{
-
-    font-size:80px;
 
     margin-top:30px;
 
+    font-size:80px;
 
     color:#00ffff;
-
 
     text-shadow:
 
     0 0 10px cyan,
 
-    0 0 40px cyan;
+    0 0 40px cyan,
 
+    0 0 80px cyan;
 
 }
-
-
-
-
 
 .subtitle{
 
-    font-size:25px;
+    font-size:24px;
 
-    color:#ddd;
+    color:#dddddd;
+
+    margin-top:10px;
 
 }
 
-
-
-
+/* ===========================
+      GLASS CARD
+===========================*/
 
 .about{
 
@@ -188,172 +390,270 @@ h1{
 
     max-width:900px;
 
-
     margin:80px auto;
-
 
     padding:40px;
 
+    border-radius:30px;
 
-    border-radius:35px;
+    background:rgba(255,255,255,.07);
 
+    backdrop-filter:blur(18px);
 
-    background:
-
-    rgba(255,255,255,.08);
-
-
-    border:1px solid rgba(255,255,255,.2);
-
-
-    backdrop-filter:blur(20px);
-
+    border:1px solid rgba(255,255,255,.12);
 
     box-shadow:
 
-    0 0 40px #000;
-
+    0 0 35px rgba(0,0,0,.45);
 
     text-align:center;
 
-
 }
-
-
-
-
 
 .about h2{
 
-    font-size:35px;
+    margin-bottom:20px;
 
-    margin-bottom:25px;
+    font-size:34px;
 
+    color:#00ffff;
 
 }
-
-
-
 
 .about p{
 
-    font-size:20px;
-
     line-height:2;
 
-    color:#ddd;
+    color:#e0e0e0;
 
+    font-size:20px;
 
 }
 
-
-
-
-
+/* ===========================
+      BUTTONS
+===========================*/
 
 .buttons{
 
-
     display:flex;
-
 
     justify-content:center;
 
-
     flex-wrap:wrap;
-
 
     gap:25px;
 
-
     padding-bottom:70px;
 
-
 }
-
-
-
 
 .buttons a{
 
-
     text-decoration:none;
-
 
     color:white;
 
-
-    font-size:20px;
-
-
-    padding:18px 45px;
-
+    padding:18px 42px;
 
     border-radius:50px;
 
+    border:1px solid cyan;
 
     background:
 
-    linear-gradient(
-
-    45deg,
-
-    #00ffff33,
-
-    #ff00ff33);
-
-
-    border:1px solid cyan;
-
+    linear-gradient(45deg,#00ffff33,#ff00ff33);
 
     backdrop-filter:blur(15px);
 
+    transition:.35s;
 
-    transition:.4s;
-
-
-    box-shadow:
-
-    0 0 20px #00ffff55;
-
+    box-shadow:0 0 20px rgba(0,255,255,.3);
 
 }
-
-
-
-
 
 .buttons a:hover{
 
-
-    transform:
-
-    translateY(-12px)
-
-    scale(1.08);
-
+    transform:translateY(-8px) scale(1.05);
 
     background:#00ffff;
 
-
     color:black;
 
-
-    box-shadow:
-
-    0 0 50px cyan;
-
+    box-shadow:0 0 40px cyan;
 
 }
 
+/* ===========================
+      SUPPORT WINDOW
+===========================*/
 
+.support-overlay{
 
+    position:fixed;
 
+    inset:0;
 
+    display:none;
 
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.7);
+
+    backdrop-filter:blur(8px);
+
+    z-index:5000;
+
+}
+
+.support-box{
+
+    position:relative;
+
+    width:90%;
+
+    max-width:700px;
+
+    max-height:85vh;
+
+    overflow:auto;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:rgba(15,20,35,.95);
+
+    border:1px solid rgba(0,255,255,.25);
+
+    box-shadow:0 0 45px rgba(0,255,255,.25);
+
+}
+
+.support-box h2{
+
+    color:#00ffff;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+.support-box p{
+
+    line-height:2;
+
+    color:#dddddd;
+
+}
+
+.support-close{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ffffff10;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.support-close:hover{
+
+    background:#ff3b3b;
+
+}
+
+/* ===========================
+      PAYMENT CARD
+===========================*/
+
+.payment-list{
+
+    display:grid;
+
+    gap:20px;
+
+    margin-top:35px;
+
+}
+
+.payment-card{
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:#ffffff08;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.payment-card h3{
+
+    color:#00ffff;
+
+    margin-bottom:10px;
+
+}
+
+.payment-card p{
+
+    margin-bottom:20px;
+
+}
+
+.payment-card a{
+
+    display:inline-block;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    background:#00ffff;
+
+    color:black;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.payment-card a:hover{
+
+    transform:scale(1.05);
+
+}
+/* ===========================
+      PARTICLES
+===========================*/
 
 .particle{
-
 
     position:fixed;
 
@@ -361,215 +661,300 @@ h1{
 
     height:5px;
 
-
-    background:white;
-
+    background:#ffffff;
 
     border-radius:50%;
 
+    opacity:.45;
 
-    opacity:.5;
+    pointer-events:none;
 
-
-    animation:particleMove 12s infinite linear;
-
+    animation:particleFloat linear infinite;
 
 }
 
-
-
-
-
-@keyframes particleMove{
-
+@keyframes particleFloat{
 
     from{
 
-        transform:translateY(100vh);
+        transform:translateY(110vh) scale(.5);
+
+        opacity:0;
 
     }
 
+    20%{
+
+        opacity:.5;
+
+    }
+
+    80%{
+
+        opacity:.5;
+
+    }
 
     to{
 
-        transform:translateY(-100vh);
+        transform:translateY(-120vh) scale(1.2);
 
-    }
-
-
-}
-
-
-
-
-
-@media(max-width:700px){
-
-
-    h1{
-
-        font-size:50px;
-
-    }
-
-
-
-    .profile{
-
-        width:170px;
-
-        height:170px;
-
-    }
-
-
-
-    .about{
-
-        width:90%;
-
-        padding:25px;
-
-    }
-
-
-
-    .buttons a{
-
-        width:80%;
-
-        text-align:center;
+        opacity:0;
 
     }
 
 }
 
-.support-overlay{
+/* ===========================
+      SCROLLBAR
+===========================*/
 
-display:none;
+::-webkit-scrollbar{
 
-position:fixed;
-
-inset:0;
-
-background:rgba(0,0,0,0.75);
-
-backdrop-filter:blur(8px);
-
-z-index:9999;
-
-align-items:center;
-
-justify-content:center;
-
-padding:20px;
+    width:10px;
 
 }
 
+::-webkit-scrollbar-track{
 
-
-.support-overlay.active{
-
-display:flex;
+    background:#050510;
 
 }
 
+::-webkit-scrollbar-thumb{
 
+    background:#00ffff66;
 
-.support-card{
+    border-radius:30px;
 
-position:relative;
+}
 
-max-width:600px;
+::-webkit-scrollbar-thumb:hover{
 
-max-height:90vh;
+    background:#00ffff;
 
-overflow-y:auto;
+}
 
-background:#080812;
+/* ===========================
+      SELECTION
+===========================*/
 
-padding:35px;
+::selection{
 
-border-radius:30px;
+    background:#00ffff;
+
+    color:black;
+
+}
+
+/* ===========================
+      MOBILE
+===========================*/
+
+@media(max-width:900px){
+
+h1{
+
+font-size:58px;
+
+}
+
+.profile{
+
+width:180px;
+
+height:180px;
+
+}
+
+.about{
+
+width:92%;
+
+padding:30px;
+
+}
+
+.about h2{
+
+font-size:28px;
+
+}
+
+.about p{
+
+font-size:18px;
+
+}
+
+.buttons{
+
+gap:18px;
+
+}
+
+.buttons a{
+
+width:90%;
 
 text-align:center;
 
-border:1px solid #00ffff55;
+}
 
-box-shadow:0 0 40px #00ffff55;
+.side-menu{
+
+width:280px;
+
+right:-290px;
 
 }
 
+.menu-btn{
 
+width:52px;
 
-.support-close{
+height:52px;
 
-position:absolute;
-
-top:15px;
-
-right:20px;
-
-width:40px;
-
-height:40px;
-
-border:none;
-
-background:#ffffff15;
-
-color:white;
-
-font-size:30px;
-
-border-radius:50%;
-
-cursor:pointer;
+font-size:28px;
 
 }
 
+.support-box{
 
+padding:25px;
 
-.support-close:hover{
-
-background:#00ffff;
-
-color:black;
+width:95%;
 
 }
 
+}
 
+/* ===========================
+      SMALL MOBILE
+===========================*/
 
-.payment-option{
+@media(max-width:500px){
 
-margin-top:25px;
+h1{
 
-padding:20px;
-
-background:#ffffff10;
-
-border-radius:20px;
+font-size:42px;
 
 }
 
+.subtitle{
 
+font-size:18px;
 
-.payment-option a{
+}
+
+.profile{
+
+width:150px;
+
+height:150px;
+
+}
+
+.about{
+
+padding:22px;
+
+}
+
+.about h2{
+
+font-size:24px;
+
+}
+
+.about p{
+
+font-size:16px;
+
+line-height:1.9;
+
+}
+
+.payment-card{
+
+padding:18px;
+
+}
+
+.payment-card a{
 
 display:block;
 
-margin-top:15px;
+width:100%;
 
-padding:12px;
+text-align:center;
 
-background:#00ffff;
+}
 
-color:black;
+}
 
-border-radius:20px;
+/* ===========================
+      SMOOTH ANIMATIONS
+===========================*/
 
-text-decoration:none;
+.fade-in{
 
-font-weight:bold;
+animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+      GLOW EFFECT
+===========================*/
+
+.glow{
+
+animation:glow 2.5s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:
+
+0 0 10px #00ffff,
+
+0 0 20px #00ffff;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 20px #00ffff,
+
+0 0 45px #00ffff,
+
+0 0 70px #00ffff;
+
+}
 
 }
