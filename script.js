@@ -163,3 +163,33 @@ button.style.transform="";
 
 
 });
+
+function openSupport(){
+
+document
+.getElementById("supportOverlay")
+.classList.add("active");
+
+}
+
+
+
+function closeSupport(){
+
+document
+.getElementById("supportOverlay")
+.classList.remove("active");
+
+}
+
+
+
+function closeSupportOutside(event){
+
+if(event.target.id === "supportOverlay"){
+
+closeSupport();
+
+}
+
+}
