@@ -536,6 +536,10 @@ color:#00ffff;
 
 position:absolute;
 
+top:20px;
+
+right:25px;
+
 font-size:35px;
 
 background:none;
@@ -546,7 +550,9 @@ border:none;
 
 cursor:pointer;
 
-}
+z-index:10;
+
+  }
 
 
 
