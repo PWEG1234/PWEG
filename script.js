@@ -163,21 +163,3 @@ button.style.transform="";
 
 
 });
-
-function openSupport(){
-
-document
-.getElementById("supportOverlay")
-.classList.add("active");
-
-}
-
-
-
-function closeSupport(){
-
-document
-.getElementById("supportOverlay")
-.classList.remove("active");
-
-}
