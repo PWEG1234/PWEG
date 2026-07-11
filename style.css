@@ -536,23 +536,21 @@ color:#00ffff;
 
 position:absolute;
 
-top:20px;
+top:15px;
 
-right:25px;
+right:20px;
 
 font-size:35px;
 
 background:none;
 
-color:white;
-
 border:none;
+
+color:white;
 
 cursor:pointer;
 
-z-index:10;
-
-  }
+}
 
 
 
