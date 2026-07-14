@@ -185,21 +185,33 @@ PWEG (Play With Elia Gamer)
 
 <!-- ===== هوش مصنوعی ===== -->
 
-<section class="about" id="ai">
+<div class="ai-box">
 
-<h2>
+    <div class="ai-messages" id="aiMessages">
 
-🤖 هوش مصنوعی PWEG
+        <div class="message ai">
+            سلام 👋 من هوش مصنوعی PWEG هستم.
+            چطور می‌توانم کمکت کنم؟ 🎮🤖
+        </div>
 
-</h2>
+    </div>
 
-<p>
 
-این بخش در حال توسعه است.
+    <div class="ai-input-box">
 
-به‌زودی می‌توانید با هوش مصنوعی اختصاصی PWEG گفتگو کنید و پاسخ سوال‌های خود را دریافت کنید.
+        <input 
+        id="aiInput"
+        placeholder="پیام خود را بنویسید...">
 
-</p>
+
+        <button id="aiSend">
+            ارسال
+        </button>
+
+    </div>
+
+
+</div>
 
 </section>
 
@@ -332,6 +344,8 @@ PWEG (Play With Elia Gamer)
 
 <script src="script.js"></script>
 
+<script src="ai.js"></script>
+  
 </body>
 
 </html>
